@@ -14,7 +14,7 @@ class UkuranForm
                 TextInput::make('panjang')
                     ->required()
                     ->numeric(),
-                TextInput::make('tinggi')
+                TextInput::make('lebar')
                     ->required()
                     ->numeric(),
                 TextInput::make('tebal')

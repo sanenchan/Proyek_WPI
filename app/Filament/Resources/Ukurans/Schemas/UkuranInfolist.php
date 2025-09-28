@@ -13,7 +13,7 @@ class UkuranInfolist
             ->components([
                 TextEntry::make('panjang')
                     ->numeric(),
-                TextEntry::make('tinggi')
+                TextEntry::make('lebar')
                     ->numeric(),
                 TextEntry::make('tebal')
                     ->numeric(),

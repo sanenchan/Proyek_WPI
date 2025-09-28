@@ -14,7 +14,7 @@ class Ukuran extends Model
     // Kolom yang boleh diisi mass-assignment
     protected $fillable = [
         'panjang',
-        'tinggi',
+        'lebar',
         'tebal'
     ];
     public function targets()

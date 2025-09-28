@@ -33,6 +33,6 @@ class Pegawai extends Model
 
     public function detailProduksiRotaries()
     {
-        return $this->hasMany(DetailProduksiRotary::class, 'id_pegawai', 'id');
+        return $this->hasMany(ProduksiRotaryPegawai::class, 'id_pegawai', 'id');
     }
 }

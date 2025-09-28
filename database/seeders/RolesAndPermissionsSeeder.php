@@ -15,9 +15,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Pastikan role 'admin' ada
         $admin = Role::firstOrCreate(['name' => 'admin']);
- if (!$user->hasRole('super_admin')) {
-            $user->assignRole($role);
-        }
+
         // Admin = super admin -> punya semua izin
         $admin->syncPermissions($permissions);
     }

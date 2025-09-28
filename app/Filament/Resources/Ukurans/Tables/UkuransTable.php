@@ -19,7 +19,7 @@ class UkuransTable
                     ->numeric()
                     ->formatStateUsing(fn($state) => $state . " mm")
                     ->sortable(),
-                TextColumn::make('tinggi')
+                TextColumn::make('lebar')
                     ->numeric()
                     ->formatStateUsing(fn($state) => $state . " mm")
                     ->sortable(),

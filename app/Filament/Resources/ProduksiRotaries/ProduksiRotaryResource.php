@@ -55,4 +55,6 @@ class ProduksiRotaryResource extends Resource
             'edit' => EditProduksiRotary::route('/{record}/edit'),
         ];
     }
+
+   
 }

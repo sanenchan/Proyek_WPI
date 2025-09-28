@@ -49,7 +49,18 @@ class Target extends Model
     }
     public function produksiRotaries()
     {
-        return $this->hasMany(Produksi_Rotary::class, 'id_target', 'id_target');
+        return $this->hasMany(ProduksiRotaryLahan::class, 'id_target', 'id_target');
     }
+
+    public function getDeskripsiAttribute()
+{
+       $namaMesin = $this->mesin?->nama_mesin ?? '-';
+    $ukuran = $this->ukuranModel ? "{$this->ukuranModel->panjang}x{$this->ukuranModel->lebar}x{$this->ukuranModel->tebal}" : '-';
+    $kodeKayu = $this->jenisKayu?->kode_kayu ?? '-';
+
+    return "{$namaMesin} | {$ukuran} | {$kodeKayu}";
+
+}
+protected $appends = ['deskripsi'];
 
 }
