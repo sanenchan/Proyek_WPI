@@ -16,6 +16,10 @@ use Filament\Tables\Table;
 
 class ProduksiRotaryLahanResource extends Resource
 {
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
     protected static ?string $model = ProduksiRotaryLahan::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

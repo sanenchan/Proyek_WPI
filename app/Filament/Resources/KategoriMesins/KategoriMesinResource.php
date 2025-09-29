@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class KategoriMesinResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Kategori Mesin'; // Label submenu
+    }
     protected static ?string $model = KategoriMesin::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

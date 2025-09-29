@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class UkuranResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Ukuran'; // Label submenu
+    }
     protected static ?string $model = Ukuran::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

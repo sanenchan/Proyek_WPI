@@ -20,7 +20,15 @@ use Filament\Tables\Table;
 class JenisKayuResource extends Resource
 {
     //Permision
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Jenis Kayu'; // Label submenu
+    }
 
     protected static ?string $model = JenisKayu::class;
 

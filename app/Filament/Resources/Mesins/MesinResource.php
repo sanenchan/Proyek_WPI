@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class MesinResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Mesin'; // Label submenu
+    }
     protected static ?string $model = Mesin::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

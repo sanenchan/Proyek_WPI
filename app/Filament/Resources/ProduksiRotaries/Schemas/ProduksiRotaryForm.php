@@ -35,7 +35,7 @@ class ProduksiRotaryForm
                         ->displayFormat('j F Y') // untuk tampilan, misal 1 Januari 2025
                         ->native(false),         // penting, supaya pakai flatpickr (bukan native browser)
 
-                                       // Jam mulai mesin
+                    // Jam mulai mesin
                     Select::make('jam_mulai_mesin')
                         ->label('Jam Mulai Mesin')
                         ->options(self::timeOptions())
@@ -83,19 +83,19 @@ class ProduksiRotaryForm
                         ->label('Daftar Lahan')
                         ->relationship()
                         ->schema([
-                           
 
-Select::make('id_lahan')
-    ->label('Lahan')
-    ->options(Lahan::all()->pluck('kode_nama', 'id_lahan')->toArray())
-    ->searchable()
-    ->required(),
 
-  Select::make('id_target')
-    ->label('Target')
-    ->options(Target::with(['mesin', 'ukuranModel', 'jenisKayu'])->get()->pluck('deskripsi', 'id_target'))
-    ->searchable()
-    ->required(),
+                            Select::make('id_lahan')
+                                ->label('Lahan')
+                                ->options(Lahan::all()->pluck('kode_nama', 'id_lahan')->toArray())
+                                ->searchable()
+                                ->required(),
+
+                            Select::make('id_target')
+                                ->label('Target')
+                                ->options(Target::with(['mesin', 'ukuranModel', 'jenisKayu'])->get()->pluck('deskripsi', 'id_target'))
+                                ->searchable()
+                                ->required(),
 
                             TextInput::make('jumlah_batang')
                                 ->label('Jumlah Batang')
@@ -122,7 +122,10 @@ Select::make('id_lahan')
                                 ->numeric()
                                 ->default(0),
 
-
+                            TextInput::make('total')
+                                ->label('total')
+                                ->numeric()
+                                ->default(0),
 
                             TextInput::make('kubikasi')
                                 ->label('Kubikasi')
@@ -134,23 +137,23 @@ Select::make('id_lahan')
                                 ->numeric()
                                 ->default(0),
 
-                                TextInput::make('capaian_produksi')
+                            TextInput::make('capaian_produksi')
                                 ->label('Capaian Produksi')
                                 ->numeric()
                                 ->default(0),
 
-                                TextInput::make('status_produksi')
+                            TextInput::make('status_produksi')
                                 ->label('Status Produksi')
                                 ->numeric()
                                 ->default(0),
 
-                                TextInput::make('potongan_target')
+                            TextInput::make('potongan_target')
                                 ->label('Potongan Target')
                                 ->numeric()
                                 ->default(0),
                         ])
                         ->columns(2)
-                        
+
                         ->columnSpanFull(),
                 ]),
 
@@ -195,14 +198,14 @@ Select::make('id_lahan')
                         ->columnSpanFull(),
                 ]),
 
-//aksi
+            //aksi
 //akhir aksi
 
         ]);
-        
+
     }
-    
-        public static function timeOptions(): array
+
+    public static function timeOptions(): array
     {
         return collect(CarbonPeriod::create('00:00', '1 hour', '23:00')->toArray())
             ->mapWithKeys(fn($time) => [
@@ -210,5 +213,5 @@ Select::make('id_lahan')
             ])
             ->toArray();
     }
-    
+
 }

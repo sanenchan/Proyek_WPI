@@ -18,6 +18,16 @@ use Filament\Tables\Table;
 
 class ProduksiRotaryResource extends Resource
 {
+    // app/Filament/Resources/ProduksiRotaryResource.php
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Produksi'; // Ini akan jadi menu induk
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Produksi Rotary'; // Label submenu
+    }
     protected static ?string $model = ProduksiRotary::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
@@ -56,5 +66,5 @@ class ProduksiRotaryResource extends Resource
         ];
     }
 
-   
+
 }

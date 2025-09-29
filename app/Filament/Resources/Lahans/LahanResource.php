@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class LahanResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Lahan'; // Label submenu
+    }
     protected static ?string $model = Lahan::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

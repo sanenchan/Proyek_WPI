@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class StokKayuResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Kayu'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Stok Kayu'; // Label submenu
+    }
     protected static ?string $model = StokKayu::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

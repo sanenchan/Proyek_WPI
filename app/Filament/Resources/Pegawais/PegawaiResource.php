@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 
 class PegawaiResource extends Resource
 {
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Data Master'; // Sama group
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Pegawai'; // Label submenu
+    }
     protected static ?string $model = Pegawai::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

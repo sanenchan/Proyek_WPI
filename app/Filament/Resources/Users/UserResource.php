@@ -18,6 +18,11 @@ use Filament\Tables\Table;
 
 class UserResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'User'; // Label submenu
+    }
+
 
     protected static ?string $model = User::class;
 
