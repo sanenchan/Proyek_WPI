@@ -28,11 +28,11 @@ class CreateProduksiRotary extends CreateRecord
 
     //     return $data;
     // }
-    protected function mutateFormDataBeforeCreate(array $data): array
-{
-    dd('Mutate Create jalan!', $data);
-    return $data;
-}
+//     protected function mutateFormDataBeforeCreate(array $data): array
+// {
+//     dd('Mutate Create jalan!', $data);
+//     return $data;
+// }
 
-    
+
 }

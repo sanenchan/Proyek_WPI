@@ -21,12 +21,6 @@ class ProduksiRotaryLahan extends Model
         'hasilkw2',
         'hasilkw3',
         'hasilkw4',
-        'total',
-        'kubikasi',            // <- posisi sudah dipastikan setelah total
-        'target_produksi',
-        'capaian_produksi',
-        'status_produksi',
-        'potongan_target',
     ];
 
     // Relasi ke induk
@@ -44,7 +38,7 @@ class ProduksiRotaryLahan extends Model
     // Relasi ke target
     public function target()
     {
-    return $this->belongsTo(Target::class, 'id_target', 'id_target');
+        return $this->belongsTo(Target::class, 'id_target', 'id_target');
     }
-    
+
 }

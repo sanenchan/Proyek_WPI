@@ -30,20 +30,16 @@ return new class extends Migration {
             $table->integer('hasil_kw3')->default(0);
             $table->integer('hasil_kw4')->default(0);
 
-            $table->integer('total')->default(0);
+
             $table->time('jam_mulai_kerja')->nullable();
             $table->time('jam_selesai_kerja')->nullable();
-            $table->decimal('kubikasi', 10, 2)->default(0);
-            $table->decimal('target_kubikasi', 10, 2)->default(0);
-            $table->integer('status')->default(0);
-            $table->integer('potongan_target')->default(0);
 
             $table->timestamps();
 
             // Foreign key constraints
             $table->foreign('id_produksi_dryer')->references('id_produksi_dryer')->on('produksi_dryers')->onDelete('restrict');
             $table->foreign('id_ukuran')->references('id_ukuran')->on('ukurans')->onDelete('restrict');
-            $table->foreign('id_jenis_kayu')->references('id_jenis')->on('jenis_kayu')->onDelete('restrict');
+            $table->foreign('id_jenis_kayu')->references('id_jenis_kayu')->on('jenis_kayus')->onDelete('restrict');
             $table->foreign('id_target')->references('id_target')->on('targets')->onDelete('restrict');
         });
     }

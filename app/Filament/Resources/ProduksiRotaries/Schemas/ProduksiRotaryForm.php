@@ -58,11 +58,12 @@ class ProduksiRotaryForm
                     Select::make('status_data')
                         ->label('Status Data')
                         ->options([
-                            0 => 'Draft',
-                            1 => 'Final',
+                            0 => 'Diproduksi',
+                            1 => 'Disetujui',
                         ])
                         ->default(0)
-                        ->required(),
+                        ->required()
+                        ->disabled(),
 
                     Textarea::make('kendala')
                         ->label('Kendala')
@@ -122,35 +123,7 @@ class ProduksiRotaryForm
                                 ->numeric()
                                 ->default(0),
 
-                            TextInput::make('total')
-                                ->label('total')
-                                ->numeric()
-                                ->default(0),
 
-                            TextInput::make('kubikasi')
-                                ->label('Kubikasi')
-                                ->numeric()
-                                ->default(0),
-
-                            TextInput::make('target_produksi')
-                                ->label('Target Produksi')
-                                ->numeric()
-                                ->default(0),
-
-                            TextInput::make('capaian_produksi')
-                                ->label('Capaian Produksi')
-                                ->numeric()
-                                ->default(0),
-
-                            TextInput::make('status_produksi')
-                                ->label('Status Produksi')
-                                ->numeric()
-                                ->default(0),
-
-                            TextInput::make('potongan_target')
-                                ->label('Potongan Target')
-                                ->numeric()
-                                ->default(0),
                         ])
                         ->columns(2)
 

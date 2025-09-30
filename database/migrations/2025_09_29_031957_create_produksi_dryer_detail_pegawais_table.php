@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('produksi_dryer_detail_pegawais', function (Blueprint $table) {
-            $table->bigIncrements('id'); // Primary Key
+            $table->bigIncrements('id_produksi_dryer_pegawais'); // Primary Key
 
             // Foreign key
             $table->unsignedBigInteger('id_pegawai'); // FK ke tabel pegawais

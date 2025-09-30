@@ -28,20 +28,12 @@ return new class extends Migration {
                 ->onDelete('restrict');
 
             $table->integer('jumlah_batang')->default(0);
-          
+
             $table->integer('hasilkw1')->default(0);
             $table->integer('hasilkw2')->default(0);
             $table->integer('hasilkw3')->default(0);
             $table->integer('hasilkw4')->default(0);
-            //kolom total menjumlahkan otomatis via database hasilkw1 + hasilkw2 + hasilkw3 + hasilkw4
-            $table->integer('total')->default(0);
-            $table->decimal('kubikasi', 12, 4)->default(0);
 
-            $table->integer('target_produksi')->default(0);
-            $table->integer('capaian_produksi')->default(0);
-
-            $table->integer('status_produksi')->default(0);
-            $table->integer('potongan_target')->default(0);
             $table->timestamps();
             // Foreign key ke tabel targets
             $table->foreign('id_target')
