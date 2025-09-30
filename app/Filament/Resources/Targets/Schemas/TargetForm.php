@@ -55,7 +55,7 @@ class TargetForm
 
             Select::make('id_ukuran')
                 ->label('Ukuran (P x L x T)')
-                ->relationship('ukuran', 'id_ukuran')
+                ->relationship('ukuranModel', 'id_ukuran')
                 ->getOptionLabelFromRecordUsing(fn(Ukuran $record) => $record->dimensi)
                 ->required()
                 ->reactive()
@@ -101,9 +101,9 @@ class TargetForm
     }
     public static function generateKodeUkuran($get): string
     {
-        $mesin = \App\Models\Mesin::find($get('id_mesin'));
-        $ukuran = \App\Models\Ukuran::find($get('id_ukuran'));
-        $kayu = \App\Models\JenisKayu::find($get('id_jenis_kayu'));
+        $mesin = Mesin::find($get('id_mesin'));
+        $ukuran = Ukuran::find($get('id_ukuran'));
+        $kayu = JenisKayu::find($get('id_jenis_kayu'));
 
         if (!$mesin || !$ukuran || !$kayu) {
             return '';

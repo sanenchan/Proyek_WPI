@@ -35,4 +35,8 @@ class Pegawai extends Model
     {
         return $this->hasMany(ProduksiRotaryPegawai::class, 'id_pegawai', 'id');
     }
+    public function getKodeNamaAttribute(): string
+    {
+        return "{$this->kode_pegawai} - {$this->nama_pegawai}";
+    }
 }

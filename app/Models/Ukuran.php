@@ -23,6 +23,6 @@ class Ukuran extends Model
     }
     public function getDimensiAttribute(): string
     {
-        return "{$this->panjang} x {$this->tinggi} x {$this->tebal}";
+        return "{$this->panjang} x {$this->lebar} x {$this->tebal}";
     }
 }

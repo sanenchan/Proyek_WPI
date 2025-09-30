@@ -25,7 +25,13 @@ return new class extends Migration {
             $table->timestamps();
 
             // Foreign key constraint
-            $table->foreign('id_pegawai')->references('id_pegawai')->on('pegawais')->onDelete('restrict');
+            $table->foreign('id_pegawai')
+                ->references('id_pegawai')
+                ->on('pegawais')
+                ->onDelete('restrict');
+            $table->unsignedBigInteger('id_produksi_dryer');
+            $table->foreign('id_produksi_dryer')->references('id_produksi_dryer')->on('produksi_dryers')->onDelete('restrict');
+
         });
     }
 

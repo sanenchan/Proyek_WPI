@@ -126,6 +126,7 @@ class ProduksiRotaryForm
 
                         ])
                         ->columns(2)
+                        ->defaultItems(8)
 
                         ->columnSpanFull(),
                 ]),
